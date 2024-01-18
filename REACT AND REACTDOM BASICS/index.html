@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your task starts here
+    let elemnt=React.createElement("p",{id:"p",children:"Seize the day "})  //using `react.createElement` we can create element with its propps and child which you want ti give created parent
+
+
+    let rootElement=ReactDOM.createRoot(document.getElementById('root'))//using `ReactDOM.createRoot` we can convert virtual dom element into actual react element its convert using babel
+
+    rootElement.render(elemnt) //    `.render` method is used render the element on the broswer `.render` method it take only one argumnet which argument type react argument
+  </script>
+</html>

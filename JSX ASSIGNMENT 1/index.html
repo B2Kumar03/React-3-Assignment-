@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your task starts here
+    
+ 
+    // console.log(alb());
+   function jsxCreator(){
+    
+    // let [cg,fun1]=useState("Hello")
+    return (
+
+   
+        <>
+        <p style={{backgroundColor:"red",fontSize:"30px",padding:"20px"}}>React is a javascript library</p>
+        <div className="main" style={{border:"2px solid black",padding:"20px",backgroundColor:"pink"}}>
+            <p>Click the below button to alert 'Hello'</p>
+            <button value="Hello" onClick={(e )=>{
+                alert(e.target.value)
+                if(e.target.value=="By")
+                {
+                    e.target.value="Hello"
+                }
+                else{
+                    e.target.value="By"
+                }
+                
+            }}>{"Hello/By alert"}</button>
+            </div>
+        </>
+    )
+   }
+    let rootElement=ReactDOM.createRoot(document.getElementById('root'))//using `ReactDOM.createRoot` we can convert virtual dom element into actual react element its convert using babel
+
+    rootElement.render(jsxCreator()) //    `.render` method is used render the element on the broswer `.render` method it take only one argumnet which argument type react argument
+  </script>
+</html>

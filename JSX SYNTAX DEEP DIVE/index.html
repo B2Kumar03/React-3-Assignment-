@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your task starts here
+  function condatinalRendering(isLogged){   //when i invoke this function we send a boolean value 
+                                            //`true` or `false` if value is true ,true part of html render,and its value is false false part value  html render
+    return isLogged ? (<p>"You can explore website now"</p>):(<p>"You can not explore website now"</p>)
+
+  }
+  
+  
+
+    function JSXShowcase(){
+      let variables="Hii i am bittu"  //it is a variable for emded with jsx using curly brases we can embede javascript variable in jsx
+      let arr=[1,2,3,4,5]   
+      let fun=()=>"hii i am a function";
+      return (
+        <>
+        <div>{variables}</div>      
+        <p>{fun()}</p>
+        <button>{arr.join(",")}</button>
+        </>
+      )
+    }
+ 
+   
+    let rootElement=ReactDOM.createRoot(document.getElementById('root'))//using `ReactDOM.createRoot` we can convert virtual dom element into actual react element its convert using babel
+
+    rootElement.render(condatinalRendering(false)) //    `.render` method is used render the element on the broswer `.render` method it take only one argumnet which argument type react argument
+  </script>
+</html>

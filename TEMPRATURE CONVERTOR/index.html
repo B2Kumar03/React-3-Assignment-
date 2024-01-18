@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your task starts her
+    let App=()=>{
+        let styleArr={border:"2px solid black",width:"500px",height:"200px",padding:"20px",backgroundColor:"pink", marginTop:"20px" }
+         
+        let [celsius,setCelsius]=React.useState("")
+        let handleCelsius=(event)=>{
+            
+            setCelsius(event.target.value)
+            let f=Math.floor((9/5*event.target.value)+32)
+            f=f+"°F"
+            setFahrenheit(f)
+
+        }
+        let [Fahrenheit,setFahrenheit]=React.useState("")
+        let handleFahrenheit=()=>{
+            setFahrenheit(event.target.value)
+            let f=Math.floor((event.target.value-32)*5/9)
+            f=f+"°C"
+            setCelsius(f)
+
+        }
+         
+        return(
+        <>
+        <div style={styleArr}>
+            <h1 style={{textAlign:"center"}}>TempratureConvertor </h1>
+            <input type="text" value={celsius} onChange={handleCelsius}  placeHolder="Enter Celsius"/>
+            <img src="https://cdn-icons-png.flaticon.com/128/7133/7133490.png" alt="" style={{width:"20px"}}/>
+            <input type="text" value={Fahrenheit} onChange={handleFahrenheit} placeHolder="Enter Fahrenheit"/>
+            </div>
+        </>
+        )
+    }
+
+
+    let rootElement=ReactDOM.createRoot(document.getElementById('root'))//using `ReactDOM.createRoot` we can convert virtual dom element into actual react element its convert using babel
+
+    rootElement.render(<App/>) //    `.render` method is used render the element on the broswer `.render` method it take only one argumnet which argument type react argument
+  </script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSX and Babel</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your JSX code here
+    function basicJSXCreator(){
+        return <p>Seize the day</p>
+    }
+    let content="Seize the day"
+
+    
+let isvalue=false
+    function ConditionalRender(){
+        if(isvalue){    
+            content="Seize the day"
+        }
+        else{
+            content = "Make the most of it"
+        }
+
+    }
+
+
+    function intermeJSXCreator(){
+        ConditionalRender()
+        return <p>{content}</p>
+
+    }
+    
+    
+    
+    ReactDOM.render(intermeJSXCreator(), document.getElementById('root'));
+
+
+
+
+  </script>
+</body>
+</html>
